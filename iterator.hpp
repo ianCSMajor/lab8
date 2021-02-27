@@ -24,6 +24,8 @@ class Iterator {
         bool is_done();
         Base* current_node();
         int current_index();
+	virtual int number_of_children();
+	virtual Base* get_child(int i)
 };
 
 #endif
