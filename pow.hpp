@@ -11,6 +11,21 @@ class Pow : public Base {
 	virtual std::string stringify() {
 		return base -> stringify() + " ** " + exp -> stringify();
 	}
+	virtual int number_of_children() {
+                int temp = 0;
+                if (base != nullptr) { temp++; }
+                if (exp != nullptr) { temp++; }
+                return temp;
+        }
+        virtual Base* get_child(int i){
+                if(i==1){
+                        return base;
+                }else if(i==2){
+                        return exp;
+                }else{
+                        return nullptr;
+                }
+        }
     private:
 	Base* base;
 	Base* exp;
