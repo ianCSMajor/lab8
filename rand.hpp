@@ -12,8 +12,13 @@ class Rand : public Base {
                 return 0;
         }
 	 void accept(Visitor* visitor, int index) {          
-		if (index == 0) {                  
-			visitor->visit_op(this); }
+		if (index == 0) { 
+			visitor->visit_rand_begin(this); }     
+		else if (index == 1) { 
+			visitor->visit_rand_middle(this); }     
+		else if (index == 2) { 
+			visitor->visit_rand_end(this); } 
+	 }
 }
         virtual Base* get_child(int i){
                         return nullptr;
