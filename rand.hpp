@@ -11,15 +11,9 @@ class Rand : public Base {
 	virtual int number_of_children() {
                 return 0;
         }
-	 void accept(Visitor* visitor, int index) {          
-		if (index == 0) { 
-			visitor->visit_rand_begin(this); }     
-		else if (index == 1) { 
-			visitor->visit_rand_middle(this); }     
-		else if (index == 2) { 
-			visitor->visit_rand_end(this); } 
-	 }
-}
+	 void accept(Visitor* visitor, int index) {   
+		 visitor->visit_rand(Rand* node)
+		 } 
         virtual Base* get_child(int i){
                         return nullptr;
         }
