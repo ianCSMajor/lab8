@@ -2,6 +2,7 @@
 #define __ADD_HPP__
 
 #include "base.hpp"
+#include "visitor.hpp"
 
 class Add : public Base {
     public:
@@ -24,6 +25,13 @@ class Add : public Base {
 		}else{
 			return nullptr;
 		}
+	}
+	void accept(Visitor* visitor, int index) {          
+		if (index == 0) {                  
+			visitor->visit_add_begin(this); }          
+		else if (index == 1) {                  
+			visitor->visit_add_middle(this); }          
+		else if (index == 2) { visitor->visit_add_end(this); }  
 	}
     private:
 	Base* val1;
