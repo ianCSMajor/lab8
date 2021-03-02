@@ -14,6 +14,10 @@ class Op : public Base {
         virtual Base* get_child(int i){
                 return nullptr;
         }
+	void accept(Visitor* visitor, int index) {            
+		 visitor->visit_op(Op* node)
+		 }        
+	 }
     private:
 	double val;
 };
