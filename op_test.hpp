@@ -3,7 +3,7 @@
 
 #include "gtest/gtest.h"
 
-#include "visitor.hpp"
+#include "op.hpp"
 
 TEST(OpTest, OpEvaluateNonZero) {
     Base* test = new Op(8);
