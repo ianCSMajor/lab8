@@ -2,6 +2,7 @@
 #define __POW_HPP__
 
 #include "base.hpp"
+#include "visitor.hpp"
 #include <math.h>
 
 class Pow : public Base {
