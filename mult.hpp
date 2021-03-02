@@ -2,6 +2,7 @@
 #define MULT_HPP
 
 #include "base.hpp"
+#include "visitor.hpp"
 
 class Mult : public Base {
     public:
