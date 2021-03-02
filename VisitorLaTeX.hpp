@@ -1,4 +1,4 @@
-class VisitorLaTeX{  
+class VisitorLaTeX: public Visitor{  
 	std::string PrintLaTex(Pow* ptr) {             
 		return ("${({" + val1 -> stringify() + "}^{" + val2 -> stringify() + "})}$");         
 } 
