@@ -2,6 +2,7 @@
 #define MULT_HPP
 
 #include "base.hpp"
+#include "visitor.hpp"
 
 class Mult : public Base {
     public:
@@ -25,7 +26,14 @@ class Mult : public Base {
                         return nullptr;
                 }
         }
-
+	void accept(Visitor* visitor, int index) {          
+		 if (index == 0) {                  
+			 visitor->visit_mult_begin(this); }          
+		 else if (index == 1) {                  
+			 visitor->visit_mult_middle(this); }          
+		 else if (index == 2) { 
+			 visitor->visit_mult_end(this); }  
+	 }
     private:
         Base* val1;
         Base* val2;
