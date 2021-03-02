@@ -17,7 +17,7 @@ class Rand : public Base {
                         return nullptr;
         }
 	void accept(Visitor* visitor, int index) {   
-		 visitor->visit_rand(Rand* node)
+		 visitor->visit_rand(this);
 	} 
     private:
 	double val;
