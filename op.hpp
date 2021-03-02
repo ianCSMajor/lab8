@@ -16,9 +16,8 @@ class Op : public Base {
                 return nullptr;
         }
 	void accept(Visitor* visitor, int index) {            
-		 visitor->visit_op(Op* node)
-		 }        
-	 }
+		 visitor->visit_op(this);
+	}        
     private:
 	double val;
 };
