@@ -12,6 +12,7 @@ class Div : public Base {
 	    }
 	    return val1 -> evaluate() / val2 -> evaluate();
 	}
+	 void accept(Visitor* visitor, int index) {          if (index == 0) {                  visitor->visit_add_begin(this); }          else if (index == 1) {                  visitor->visit_add_middle(this); }          else if (index == 2) { visitor->visit_add_end(this); }  }
 	virtual std::string stringify() {
 		return val1 -> stringify() + " / " + val2 -> stringify();
 	}

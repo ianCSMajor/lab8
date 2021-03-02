@@ -11,6 +11,10 @@ class Rand : public Base {
 	virtual int number_of_children() {
                 return 0;
         }
+	 void accept(Visitor* visitor, int index) {          
+		if (index == 0) {                  
+			visitor->visit_op(this); }
+}
         virtual Base* get_child(int i){
                         return nullptr;
         }
