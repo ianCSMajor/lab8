@@ -8,7 +8,7 @@ class Op : public Base {
         Op(double value) : Base(), val(value) { }
         virtual double evaluate() { return val; }
 	 void accept(Visitor* visitor, int index) {            
-		 visitor->visit_op(Rand* node)
+		 visitor->visit_op(Op* node)
 		 }        
 	 }
         virtual std::string stringify() { return std::to_string(val); }
