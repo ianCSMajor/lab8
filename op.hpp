@@ -5,6 +5,7 @@
 #include "sstream"
 #include <math.h>
 #include <stdlib.h>
+#include "visitor.hpp"
 using namespace std;
 
 class Op : public Base {
@@ -32,9 +33,10 @@ class Add : public Base {
  		  return temp;
 	  }
 	  virtual Base* get_child(int i){
-		  if(i==1){
+      // 1 and 2 have been changed to 0 and 1
+		  if(i==0){
 			  return val1;	
-		  }else if(i==2){
+		  }else if(i==1){
 			  return val2;
 		  }else{
 			  return nullptr;
@@ -61,9 +63,9 @@ class Sub : public Base {
       return temp;
     }
     virtual Base* get_child(int i){
-      if(i==1){
+      if(i==0){
         return val1;
-      }else if(i==2){
+      }else if(i==1){
         return val2;
       }else{
         return nullptr;
@@ -90,9 +92,9 @@ class Mult : public Base {
           return temp;
         }
         virtual Base* get_child(int i){
-          if(i==1){
+          if(i==0){
                 return val1;
-          }else if(i==2){
+          }else if(i==1){
                 return val2;
           }else{
                 return nullptr;
@@ -126,9 +128,9 @@ class Div : public Base {
       return temp;
     }
     virtual Base* get_child(int i){
-      if(i==1){
+      if(i==0){
         return val1;
-      }else if(i==2){
+      }else if(i==1){
         return val2;
       }else{
         return nullptr;
@@ -154,9 +156,9 @@ class Pow : public Base {
                 return temp;
         }
     virtual Base* get_child(int i){
-      if(i==1){
+      if(i==0){
               return base;
-      }else if(i==2){
+      }else if(i==1){
               return exp;
       }else{
               return nullptr;

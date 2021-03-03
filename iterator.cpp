@@ -18,6 +18,7 @@ void Iterator::next()
     int old_index=it.index++;
     if(old_index<it.number_children)
     {
+      //i think old_index can only iether be 0 or 1 when get_child() is called
         Base* child = it.ptr->get_child(old_index);
         node_stack.push(base_iterator(child));
     }
