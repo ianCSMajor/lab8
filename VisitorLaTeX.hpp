@@ -3,7 +3,7 @@ class VisitorLaTeX: public Visitor{
 	Base* val1;
 	Base* val2;
 	string start = "${";
-	string end = "}$;
+	string end = "}$";
 	public:
 	
 	//Implementing functions for nodes with no children
