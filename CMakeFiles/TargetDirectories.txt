@@ -4,6 +4,7 @@
 /home/csmajs/ioh012/lab-08---visitor-pattern-klam073-ioh012-lab8/CMakeFiles/list_install_components.dir
 /home/csmajs/ioh012/lab-08---visitor-pattern-klam073-ioh012-lab8/CMakeFiles/rebuild_cache.dir
 /home/csmajs/ioh012/lab-08---visitor-pattern-klam073-ioh012-lab8/CMakeFiles/edit_cache.dir
+/home/csmajs/ioh012/lab-08---visitor-pattern-klam073-ioh012-lab8/CMakeFiles/main.dir
 /home/csmajs/ioh012/lab-08---visitor-pattern-klam073-ioh012-lab8/CMakeFiles/test.dir
 /home/csmajs/ioh012/lab-08---visitor-pattern-klam073-ioh012-lab8/googletest/CMakeFiles/install/strip.dir
 /home/csmajs/ioh012/lab-08---visitor-pattern-klam073-ioh012-lab8/googletest/CMakeFiles/install/local.dir

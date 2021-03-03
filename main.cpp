@@ -3,6 +3,8 @@
 #include "base.hpp"
 #include "sub.hpp"
 #include "op.hpp"
+#include "visitor.hpp"
+#include "VisitorLaTeX.hpp"
 #include "iterator.hpp"
 using namespace std;
 
@@ -24,8 +26,7 @@ int main() {
   Base* three= new Op(3);
   Base* seven= new Op(7);
   Base* minus= new Sub(seven, three);
-
-
+ 
   cout<< minus->stringify() << " = " << minus->evaluate() << std::endl;
 
 
@@ -37,7 +38,16 @@ int main() {
     
   }while(!(i.is_done()));
 
-
+ Base * two = new Op(2);
+ Base * six = new Op(6);
+ cout << endl << "-------------------LATEX--------------------:" << endl;
+  VisitorLaTeX* visit = new VisitorLaTeX();
+   cout << visit->PrintFunction(minus);
+   cout << endl;
+delete three;
+delete seven;
+delete minus;
+delete visit;
 
   return 0;
 }

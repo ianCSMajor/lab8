@@ -14,6 +14,7 @@ private:
 //Base* val1; 	
 ////Base* val2; 	
 public: 	
+
 std::string expr = "$"; 	 	 	
 virtual void visit_op(Op* node){ 		
 expr += "{"; 		
@@ -63,9 +64,10 @@ std::string PrintFunction(Base* ptr){
 auto * itr = new Iterator(ptr); 		 		
 while(!itr->is_done()){ 			
 itr->current_node()->accept(this, itr->current_index());                 	
-itr->next();         }         
+itr->next();         }
+delete itr;         
 return this->expr; 	} 			 	 	
 VisitorLaTeX() {} 	
-~VisitorLaTeX(); 
+~VisitorLaTeX(){} 
 };
 
