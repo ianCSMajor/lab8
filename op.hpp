@@ -5,6 +5,7 @@
 #include "visitor.hpp"
 
 class Op : public Base {
+
   public:
     Op(double value) : Base(), val(value) { }
     virtual double evaluate() { return val; }
@@ -17,6 +18,7 @@ class Op : public Base {
   
   private:
 	  double val;
+
 };
 
 #endif //__OP_HPP__

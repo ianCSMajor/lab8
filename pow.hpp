@@ -2,7 +2,9 @@
 #define __POW_HPP__
 
 #include "base.hpp"
+#include "visitor.hpp"
 #include <math.h>
+#include "visitor.hpp"
 
 class Pow : public Base {
     public:
@@ -11,6 +13,14 @@ class Pow : public Base {
 	virtual std::string stringify() {
 		return base -> stringify() + " ** " + exp -> stringify();
 	}
+         void accept(Visitor* visitor, int index) {          
+		 if (index == 0) {                  
+			 visitor->visit_pow_begin(this); }          
+		 else if (index == 1) {                  
+			 visitor->visit_pow_middle(this); }          
+		 else if (index == 2) { 
+			 visitor->visit_pow_end(this); }  
+	 }
 	virtual int number_of_children() {
                 int temp = 0;
                 if (base != nullptr) { temp++; }
@@ -26,9 +36,18 @@ class Pow : public Base {
                         return nullptr;
                 }
         }
+	void accept(Visitor* visitor, int index) {          
+		 if (index == 0) {                  
+			 visitor->visit_pow_begin(this); }          
+		 else if (index == 1) {                  
+			 visitor->visit_pow_middle(this); }          
+		 else if (index == 2) { 
+			 visitor->visit_pow_end(this); }  
+	 }
     private:
 	Base* base;
 	Base* exp;
 };
 
 #endif
+

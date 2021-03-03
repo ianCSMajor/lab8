@@ -1,7 +1,9 @@
 #ifndef __RAND_HPP__
 #define __RAND_HPP__
 #include <stdlib.h>
+
 #include "base.hpp"
+#include "visitor.hpp"
 
 class Rand : public Base {
     public:
@@ -11,10 +13,17 @@ class Rand : public Base {
 	virtual int number_of_children() {
                 return 0;
         }
+	 void accept(Visitor* visitor, int index) {   
+		 visitor->visit_rand(this)
+		 } 
         virtual Base* get_child(int i){
                         return nullptr;
         }
+	void accept(Visitor* visitor, int index) {   
+		 visitor->visit_rand(this);
+	} 
     private:
 	double val;
 };
 #endif
+
