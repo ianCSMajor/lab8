@@ -56,10 +56,14 @@ cout << endl;    cout << visit->PrintFunction(minus);    cout << endl;
    //VisitorLaTeX* visit2 = new VisitorLaTeX();
    //cout << visit2->PrintFunction(add);
 
-
+delete visit;
 delete three;
 delete seven;
 delete minus;
+delete four;
+delete two;
+delete mult;
+delete add;
 //delete visit;
 //delete visit2;
 

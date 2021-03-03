@@ -29,7 +29,7 @@ TEST(PowTest, PowGetChildOne) {
     Base* test = new Pow(val1,val2);
     EXPECT_EQ(test -> get_child(1)->evaluate(), 7);
     delete val1;
-    delete val2
+    delete val2;
 	delete test;
 }
 TEST(PowTest, PowGetChildTwo) {
