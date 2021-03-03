@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++11
 
 CXX_DEFINES = -Dgtest_disable_pthreads=ON
 
-CXX_INCLUDES = -isystem /home/csmajs/rlumb001/lab-08---visitor-pattern-klam073-ioh012-lab8/googletest/googletest/include -isystem /home/csmajs/rlumb001/lab-08---visitor-pattern-klam073-ioh012-lab8/googletest/googletest 
+CXX_INCLUDES = -isystem /home/csmajs/ioh012/lab-08---visitor-pattern-klam073-ioh012-lab8/googletest/googletest/include -isystem /home/csmajs/ioh012/lab-08---visitor-pattern-klam073-ioh012-lab8/googletest/googletest 
 

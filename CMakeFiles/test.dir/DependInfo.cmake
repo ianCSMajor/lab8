@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/csmajs/rlumb001/lab-08---visitor-pattern-klam073-ioh012-lab8/unit_tests.cpp" "/home/csmajs/rlumb001/lab-08---visitor-pattern-klam073-ioh012-lab8/CMakeFiles/test.dir/unit_tests.cpp.o"
+  "/home/csmajs/ioh012/lab-08---visitor-pattern-klam073-ioh012-lab8/unit_test.cpp" "/home/csmajs/ioh012/lab-08---visitor-pattern-klam073-ioh012-lab8/CMakeFiles/test.dir/unit_test.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -21,7 +21,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/csmajs/rlumb001/lab-08---visitor-pattern-klam073-ioh012-lab8/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/home/csmajs/ioh012/lab-08---visitor-pattern-klam073-ioh012-lab8/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

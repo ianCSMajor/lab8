@@ -11,14 +11,6 @@ class Mult : public Base {
         virtual std::string stringify() {
             return val1 -> stringify() + " * " + val2 -> stringify();
         }
-  	 void accept(Visitor* visitor, int index) {          
-		 if (index == 0) {                  
-			 visitor->visit_mult_begin(this); }          
-		 else if (index == 1) {                  
-			 visitor->visit_mult_middle(this); }          
-		 else if (index == 2) { 
-			 visitor->visit_mult_end(this); }  
-	 }
 	virtual int number_of_children() {
                 int temp = 0;
                 if (val1 != nullptr) { temp++; }

@@ -1,3 +1,16 @@
+#include "visitor.hpp"
+#include "base.hpp"
+#include "add.hpp"
+#include "sub.hpp"
+#include "div.hpp"
+#include "mult.hpp"
+#include "op.hpp"
+#include "pow.hpp"
+#include "rand.hpp"
+
+#include "iterator.cpp"
+#include <sstream>
+
 class VisitorLaTeX: public Visitor{  
 	private:
 	//Base* val1;
@@ -9,14 +22,14 @@ class VisitorLaTeX: public Visitor{
 	virtual void visit_op(Op* node){
 		expr += "{";
 		std::ostringstream s;
-                s << node->val;
+                s << node->getVal();
                 exp += s.str();
 		expr += "}$";
 	}
         virtual void visit_rand(Rand* node){
 		expr += "{";
 		std::ostringstream s;
-                s << node->val;
+                s << node->getVal();
                 exp += s.str();
 		expr += "}$";
 	}
@@ -58,13 +71,13 @@ class VisitorLaTeX: public Visitor{
         virtual void visit_div_end(Div* node){
 		expr += ")}";
 	}
-        virtual void visit_pow_begin(Power* node){
+        virtual void visit_pow_begin(Pow* node){
 		expr += "{(";
 	}
-        virtual void visit_pow_middle(Power* node){
+        virtual void visit_pow_middle(Pow* node){
 		expr += "^";
 	}
-        virtual void visit_pow_end(Power* node){
+        virtual void visit_pow_end(Pow* node){
 		expr += ")}";
 	}
 	std::string PrintFunction(Base* ptr){
@@ -78,7 +91,7 @@ class VisitorLaTeX: public Visitor{
 	}
 			
 	
-	VisitorLaTeX(Base* initialVal, Base* subVal): Base(), val1(initialVal), val2(subVal) {}
+	VisitorLaTeX() {}
 	~VisitorLaTeX();
 };
 

@@ -14,14 +14,14 @@ class Rand : public Base {
                 return 0;
         }
 	 void accept(Visitor* visitor, int index) {   
-		 visitor->visit_rand(this)
+		 visitor->visit_rand(this);
 		 } 
         virtual Base* get_child(int i){
                         return nullptr;
         }
-	void accept(Visitor* visitor, int index) {   
-		 visitor->visit_rand(this);
-	} 
+	double getVal(){
+		return val; 
+	}
     private:
 	double val;
 };

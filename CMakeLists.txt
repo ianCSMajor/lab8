@@ -6,7 +6,7 @@ SET(CMAKE_CXX_STANDARD 11)
 
 ADD_EXECUTABLE(test
 
-    unit_tests.cpp
+    unit_test.cpp
 
 )
 

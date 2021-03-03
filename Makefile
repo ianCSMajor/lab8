@@ -68,10 +68,10 @@ RM = /usr/bin/cmake3 -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/csmajs/rlumb001/lab-08---visitor-pattern-klam073-ioh012-lab8
+CMAKE_SOURCE_DIR = /home/csmajs/ioh012/lab-08---visitor-pattern-klam073-ioh012-lab8
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/csmajs/rlumb001/lab-08---visitor-pattern-klam073-ioh012-lab8
+CMAKE_BINARY_DIR = /home/csmajs/ioh012/lab-08---visitor-pattern-klam073-ioh012-lab8
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -146,9 +146,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/csmajs/rlumb001/lab-08---visitor-pattern-klam073-ioh012-lab8/CMakeFiles /home/csmajs/rlumb001/lab-08---visitor-pattern-klam073-ioh012-lab8/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/csmajs/ioh012/lab-08---visitor-pattern-klam073-ioh012-lab8/CMakeFiles /home/csmajs/ioh012/lab-08---visitor-pattern-klam073-ioh012-lab8/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/csmajs/rlumb001/lab-08---visitor-pattern-klam073-ioh012-lab8/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/csmajs/ioh012/lab-08---visitor-pattern-klam073-ioh012-lab8/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -241,32 +241,32 @@ gtest/fast:
 	$(MAKE) $(MAKESILENT) -f googletest/googletest/CMakeFiles/gtest.dir/build.make googletest/googletest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
-unit_tests.o: unit_tests.cpp.o
+unit_test.o: unit_test.cpp.o
 
-.PHONY : unit_tests.o
+.PHONY : unit_test.o
 
 # target to build an object file
-unit_tests.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/unit_tests.cpp.o
-.PHONY : unit_tests.cpp.o
+unit_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/unit_test.cpp.o
+.PHONY : unit_test.cpp.o
 
-unit_tests.i: unit_tests.cpp.i
+unit_test.i: unit_test.cpp.i
 
-.PHONY : unit_tests.i
+.PHONY : unit_test.i
 
 # target to preprocess a source file
-unit_tests.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/unit_tests.cpp.i
-.PHONY : unit_tests.cpp.i
+unit_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/unit_test.cpp.i
+.PHONY : unit_test.cpp.i
 
-unit_tests.s: unit_tests.cpp.s
+unit_test.s: unit_test.cpp.s
 
-.PHONY : unit_tests.s
+.PHONY : unit_test.s
 
 # target to generate assembly for a file
-unit_tests.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/unit_tests.cpp.s
-.PHONY : unit_tests.cpp.s
+unit_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/unit_test.cpp.s
+.PHONY : unit_test.cpp.s
 
 # Help Target
 help:
@@ -285,9 +285,9 @@ help:
 	@echo "... gtest"
 	@echo "... gtest_main"
 	@echo "... test"
-	@echo "... unit_tests.o"
-	@echo "... unit_tests.i"
-	@echo "... unit_tests.s"
+	@echo "... unit_test.o"
+	@echo "... unit_test.i"
+	@echo "... unit_test.s"
 .PHONY : help
 
 
