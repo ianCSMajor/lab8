@@ -21,13 +21,13 @@ expr += "{";
 std::ostringstream s;                 
 s << node->getVal();                 
 expr += s.str(); 		
-expr += "}$"; 	}         
+expr += "}"; 	}         
 virtual void visit_rand(Rand* node){ 		
 expr += "{"; 		
 std::ostringstream s;                 
 s << node->getVal();                 
 expr += s.str(); 	
-expr += "}$"; 	
+expr += "}"; 	
 } 	//Implementing functions for nodes with no children 	 	
 virtual void visit_add_begin(Add* node){ 		
 expr += "{("; 	}         
@@ -59,7 +59,8 @@ expr += "{("; 	}
 virtual void visit_pow_middle(Pow* node){ 		
 expr += "^"; 	}         
 virtual void visit_pow_end(Pow* node){ 		
-expr += ")}"; 	} 	
+expr += ")}"; 	} 
+expr += "$";  
 std::string PrintFunction(Base* ptr){ 		
 auto * itr = new Iterator(ptr); 		 		
 while(!itr->is_done()){ 			
