@@ -1,3 +1,8 @@
+#include "visitor.hpp"
+#include "base.hpp"
+#include "iterator.cpp"
+#include <sstream>
+
 class VisitorLaTeX: public Visitor{  
 	private:
 	//Base* val1;
