@@ -19,6 +19,9 @@ class Rand : public Base {
         virtual Base* get_child(int i){
                         return nullptr;
         }
+	double getVal(){
+		return val; 
+	}
     private:
 	double val;
 };

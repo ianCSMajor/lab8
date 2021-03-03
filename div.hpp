@@ -9,7 +9,7 @@ class Div : public Base {
 	Div(Base* initVal, Base* divVal) : Base(), val1(initVal), val2(divVal) {}
 	virtual double evaluate() {
 	    if(val2 -> evaluate() == 0) {
-		return NULL;
+		return 0;
 	    }
 	    return val1 -> evaluate() / val2 -> evaluate();
 	}
