@@ -18,9 +18,10 @@ class Sub : public Base {
                 return temp;
         }
         virtual Base* get_child(int i){
-                if(i==1){
+          //changed from 1/2 to 0/1
+                if(i==0){
                         return val1;
-                }else if(i==2){
+                }else if(i==1){
                         return val2;
                 }else{
                         return nullptr;

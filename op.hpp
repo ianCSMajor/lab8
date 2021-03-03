@@ -8,6 +8,10 @@ class Op : public Base {
     public:
         Op(double value) : Base(), val(value) { }
         virtual double evaluate() { return val; }
+	 void accept(Visitor* visitor, int index) {            
+		 visitor->visit_op(Op* node)
+		 }        
+	 }
         virtual std::string stringify() { return std::to_string(val); }
 	virtual int number_of_children() {
                 return 0;
