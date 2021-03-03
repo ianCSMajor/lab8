@@ -5,6 +5,21 @@ class VisitorLaTeX: public Visitor{
 	public:
 	std::string expr = "$";
 	
+	
+	virtual void visit_op(Op* node){
+		expr += "{";
+		std::ostringstream s;
+                s << node->val;
+                exp += s.str();
+		expr += "}$";
+	}
+        virtual void visit_rand(Rand* node){
+		expr += "{";
+		std::ostringstream s;
+                s << node->val;
+                exp += s.str();
+		expr += "}$";
+	}
 	//Implementing functions for nodes with no children
 	
 	virtual void visit_add_begin(Add* node){
