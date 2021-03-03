@@ -27,7 +27,7 @@ expr += "{";
 std::ostringstream s;                 
 s << node->getVal();                 
 expr += s.str(); 	
-expr += "}$"; 	
+expr += "}"; 	
 } 	//Implementing functions for nodes with no children 	 	
 virtual void visit_add_begin(Add* node){ 		
 expr += "{("; 	}         
