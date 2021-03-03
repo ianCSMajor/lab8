@@ -2,6 +2,8 @@
 
 #include "base.hpp"
 #include "sub.hpp"
+#include "add.hpp"
+#include "mult.hpp"
 #include "op.hpp"
 #include "visitor.hpp"
 #include "VisitorLaTeX.hpp"
@@ -40,14 +42,20 @@ int main() {
 
  Base * two = new Op(2);
  Base * six = new Op(6);
+ Base * add = new Add(two, six);
  cout << endl << "-------------------LATEX--------------------:" << endl;
   VisitorLaTeX* visit = new VisitorLaTeX();
    cout << visit->PrintFunction(minus);
    cout << endl;
+   VisitorLaTeX* visit2 = new VisitorLaTeX();
+   cout << visit->PrintFunction(add);
+
+
 delete three;
 delete seven;
 delete minus;
 delete visit;
+delete visit2;
 
   return 0;
 }

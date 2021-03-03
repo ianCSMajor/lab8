@@ -65,7 +65,8 @@ auto * itr = new Iterator(ptr);
 while(!itr->is_done()){ 			
 itr->current_node()->accept(this, itr->current_index());                 	
 itr->next();         }
-delete itr;         
+delete itr;
+expr += "$";         
 return this->expr; 	} 			 	 	
 VisitorLaTeX() {} 	
 ~VisitorLaTeX(){} 

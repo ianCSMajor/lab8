@@ -69,6 +69,10 @@ base.hpp
 /home/csmajs/ioh012/lab-08---visitor-pattern-klam073-ioh012-lab8/base.hpp
 sub.hpp
 /home/csmajs/ioh012/lab-08---visitor-pattern-klam073-ioh012-lab8/sub.hpp
+add.hpp
+/home/csmajs/ioh012/lab-08---visitor-pattern-klam073-ioh012-lab8/add.hpp
+mult.hpp
+/home/csmajs/ioh012/lab-08---visitor-pattern-klam073-ioh012-lab8/mult.hpp
 op.hpp
 /home/csmajs/ioh012/lab-08---visitor-pattern-klam073-ioh012-lab8/op.hpp
 visitor.hpp
