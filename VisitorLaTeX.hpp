@@ -21,7 +21,7 @@ expr += "{";
 std::ostringstream s;                 
 s << node->getVal();                 
 expr += s.str(); 		
-expr += "}$"; 	}         
+expr += "}"; 	}         
 virtual void visit_rand(Rand* node){ 		
 expr += "{"; 		
 std::ostringstream s;                 
