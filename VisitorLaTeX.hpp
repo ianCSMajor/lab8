@@ -1,67 +1,69 @@
 class VisitorLaTeX: public Visitor{  
 	private:
-	Base* val1;
-	Base* val2;
-	string start = "${";
-	string end = "}$";
+	//Base* val1;
+	//Base* val2;
 	public:
+	std::string expr = "$";
 	
 	//Implementing functions for nodes with no children
 	
-	virtual void visit_op(Op* node){
-		cout << start << node->val << end << endl;
-	}
-	virtual void visit_rand(Rand* node){
-		cout << start << node->val << end << endl;	
-	}
 	virtual void visit_add_begin(Add* node){
-		cout << start << "({";
-	};
+		expr += "{(";
+	}
         virtual void visit_add_middle(Add* node){
-		cout << "}+{";	
+		expr += "+";
 	}
         virtual void visit_add_end(Add* node){
-		cout << "})" << end;	
+		expr += ")}";
 	}
         virtual void visit_sub_begin(Sub* node){
-		cout << start << "({";
+		expr += "{(";
 	}
         virtual void visit_sub_middle(Sub* node){
-		cout << "}-{";
+		expr += "-";
 	}
         virtual void visit_sub_end(Sub* node){
-		cout << "})" << end;
+		expr += ")}";
 	}
         virtual void visit_mult_begin(Mult* node){
-		cout << start << "({";	
+		expr += "{(";
 	}
         virtual void visit_mult_middle(Mult* node){
-		cout << "}\cdot{";	
+		expr += "\\cdot";
 	}
         virtual void visit_mult_end(Mult* node){
-		cout << "})" << end;
+		expr += ")}";
 	}
-        virtual void visit_div_begin(Div* node)
-	{
-		cout << start << "\frac" << "{";	
+        virtual void visit_div_begin(Div* node){
+		expr += "{(";
 	}
         virtual void visit_div_middle(Div* node){
-		cout << "}{";	
+		expr += "\frac";
 	}
         virtual void visit_div_end(Div* node){
-		cout << "}" << end;
+		expr += ")}";
 	}
-        virtual void visit_pow_begin(Pow* node)
-	{
-		cout << start << "({";		
+        virtual void visit_pow_begin(Power* node){
+		expr += "{(";
 	}
-        virtual void visit_pow_middle(Pow* node){
-		cout << "}\cdot{";
+        virtual void visit_pow_middle(Power* node){
+		expr += "^";
 	}
-        virtual void visit_pow_end(Pow* node){
-		cout << "})" << end;	
+        virtual void visit_pow_end(Power* node){
+		expr += ")}";
 	}
+	std::string PrintFunction(Base* ptr){
+		auto * itr = new Iterator(ptr);
+		
+		while(!(itr->is_done)){
+			itr->current_node()->accept(this, itr->current_index());
+                	itr->next();
+        }
+        return this->expr;
+	}
+			
 	
 	VisitorLaTeX(Base* initialVal, Base* subVal): Base(), val1(initialVal), val2(subVal) {}
 	~VisitorLaTeX();
+};
 
