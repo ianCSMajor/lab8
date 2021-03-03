@@ -45,4 +45,3 @@ class Add : public Base {
 	Base* val2;
 };
 #endif
-
