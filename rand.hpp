@@ -13,7 +13,7 @@ class Rand : public Base {
                 return 0;
         }
 	 void accept(Visitor* visitor, int index) {   
-		 visitor->visit_rand(Rand* node)
+		 visitor->visit_rand(this)
 		 } 
         virtual Base* get_child(int i){
                         return nullptr;
@@ -22,3 +22,4 @@ class Rand : public Base {
 	double val;
 };
 #endif
+

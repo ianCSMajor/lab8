@@ -41,3 +41,4 @@ class Pow : public Base {
 };
 
 #endif
+
