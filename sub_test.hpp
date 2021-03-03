@@ -21,7 +21,7 @@ TEST(SubTest, SubGetChildOne) {
     Base* val1 = new Op(7);
     Base* val2 = new Op(4);
     Base* test = new Sub(val1,val2);
-    EXPECT_EQ(test -> get_child(1)->evaluate(), 7);
+    EXPECT_EQ(test -> get_child(1)->evaluate(), 4);
 }
 TEST(SubTest, SubGetChildTwo) {
     Base* val1 = new Op(7);
