@@ -16,18 +16,23 @@ int main() {
   // all the classes that you create (and can be instantiated) in this lab
     //the expression:  Sub( Add( Op(3), Mult(Op(7),Op(4)) ), Op(2)  )
   // or 7x4+3-2 = 29
-  // Base* three = new Op(3);
-  // Base* seven = new Op(7);
-  // Base* four = new Op(4);
-  // Base* two = new Op(2);
-  // Base* mult = new Mult(seven, four);
-  // Base* add = new Add(three, mult);
-  // Base* minus = new Sub(add, two);
-
-
-  Base* three= new Op(3);
-  Base* seven= new Op(7);
-  Base* minus= new Sub(seven, three);
+   VisitorLaTeX* visit = new VisitorLaTeX();
+   Base* three = new Op(3);
+   Base* seven = new Op(7);
+   Base* four = new Op(4);
+   Base* two = new Op(2);
+   Base* mult = new Mult(seven, four);
+   Base* add = new Add(three, mult);
+   Base* minus = new Sub(add, two);
+   //cout << visit->PrintFunction(mult);
+   //cout << visit->PrintFunction(add);
+   //cout << endl;
+   //cout << visit->PrintFunction(minus);
+   //cout << endl;	
+  //Base* three= new Op(3);
+  //Base* seven= new Op(7);
+  //Base * randNum = new Rand();
+  //Base* minus= new Sub(seven, three);
  
   cout<< minus->stringify() << " = " << minus->evaluate() << std::endl;
 
@@ -40,22 +45,23 @@ int main() {
     
   }while(!(i.is_done()));
 
- Base * two = new Op(2);
- Base * six = new Op(6);
- Base * add = new Add(two, six);
+ //Base * two = new Op(2);
+ //Base * six = new Op(6);
+ //Base * add = new Add(two, six);
  cout << endl << "-------------------LATEX--------------------:" << endl;
-  VisitorLaTeX* visit = new VisitorLaTeX();
-   cout << visit->PrintFunction(minus);
+cout << endl;    cout << visit->PrintFunction(minus);    cout << endl;
+  //VisitorLaTeX* visit = new VisitorLaTeX();
+   //cout << visit->PrintFunction(minus);
    cout << endl;
-   VisitorLaTeX* visit2 = new VisitorLaTeX();
-   cout << visit->PrintFunction(add);
+   //VisitorLaTeX* visit2 = new VisitorLaTeX();
+   //cout << visit2->PrintFunction(add);
 
 
 delete three;
 delete seven;
 delete minus;
-delete visit;
-delete visit2;
+//delete visit;
+//delete visit2;
 
   return 0;
 }

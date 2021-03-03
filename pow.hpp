@@ -20,9 +20,9 @@ class Pow : public Base {
                 return temp;
         }
         virtual Base* get_child(int i){
-                if(i==1){
+                if(i==0){
                         return base;
-                }else if(i==2){
+                }else if(i==1){
                         return exp;
                 }else{
                         return nullptr;
