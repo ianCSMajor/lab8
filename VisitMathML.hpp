@@ -162,5 +162,5 @@ std::string PrintFunction(Base* ptr){
 
 
 VisitMathML(){} 	
-isitMathML(){} 
+~VisitMathML(){} 
 };
