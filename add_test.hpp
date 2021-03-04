@@ -26,7 +26,7 @@ TEST(AddTest, AddGetChildOne) {
     Base* val1 = new Op(7);
     Base* val2 = new Op(4);
     Base* test = new Add(val1,val2);
-    EXPECT_EQ(test -> get_child(1)->evaluate(), 7);
+    EXPECT_EQ(test -> get_child(0)->evaluate(), 7);
     delete val1;
     delete val2;
     delete test;
@@ -35,7 +35,7 @@ TEST(AddTest, AddGetChildTwo) {
     Base* val1 = new Op(7);
     Base* val2 = new Op(4);
     Base* test = new Add(val1,val2);
-    EXPECT_EQ(test -> get_child(2)->evaluate(), 4);
+    EXPECT_EQ(test -> get_child(1)->evaluate(), 4);
     delete val1;
     delete val2;
     delete test;
