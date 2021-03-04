@@ -10,7 +10,6 @@
 //#include "iterator.cpp" 
 #include <sstream>  
 #include <vector>
-//#include <stack>
 //#include <queue>
 #include <iostream>
 #include <string>
@@ -24,11 +23,8 @@ private:
 public: 	
   //std::string expr = "$"; 
   string theory= "";
-  vector<string> num;
-  vector<string> sign;
-  vector<string> sign2;
-  int space= 0;
-  int signSpace= 0;
+  vector<string> q;
+  int donothing= 0;
 
 
 virtual void visit_op(Op* node){ 		
@@ -38,8 +34,7 @@ virtual void visit_op(Op* node){
   s << node->getVal();                 
   cheese += s.str(); 		
   cheese += "</cn>"; 	
-  num.push_back(cheese);
-  space++;
+  q.push_back(cheese);
 }  
 
 virtual void visit_rand(Rand* node){ 		
@@ -49,85 +44,29 @@ virtual void visit_rand(Rand* node){
   s << node->getVal();                 
   beans += s.str(); 		
   beans += "</cn>"; 	
-  num.push_back(beans);
-  space++;	
+  q.push_back(beans);	
 } 	
 
 //Implementing functions for nodes with no children 	 	
-virtual void visit_add_begin(Add* node){ sign.push_back("<times/>");
-  space++;
-  signSpace++;
-}
-virtual void visit_add_middle(Add* node){ 
-  //sign.push_back(" ");
-  space++;
-  
- }         
-virtual void visit_add_end(Add* node){ 
-  //sign.push_back(" ");
-  space++;
-  
- } 
+virtual void visit_add_begin(Add* node){ q.push_back("<plus/>"); }
+virtual void visit_add_middle(Add* node){ q.push_back(" "); }         
+virtual void visit_add_end(Add* node){ q.push_back(" "); } 
 
-virtual void visit_sub_begin(Sub* node){ sign.push_back("<minus/>");
-  space++;
-  signSpace++;
-} 
-virtual void visit_sub_middle(Sub* node){ 
-  //sign.push_back(" ");
-  space++;
-  
- }       
-virtual void visit_sub_end(Sub* node){ 
-  //sign.push_back(" ");
-  space++;
-  
- }     
+virtual void visit_sub_begin(Sub* node){ q.push_back("<minus/>"); }    
+virtual void visit_sub_middle(Sub* node){ q.push_back(" "); }       
+virtual void visit_sub_end(Sub* node){ q.push_back(" "); }     
 
-virtual void visit_mult_begin(Mult* node){  sign.push_back("<plus/>");
-  space++;
-  signSpace++;
- }
-virtual void visit_mult_middle(Mult* node){ 
-  //sign.push_back(" ");
-  space++;
-  
- }  
-virtual void visit_mult_end(Mult* node){  
-  //sign.push_back(" ");
-  space++;
-  
- }     
+virtual void visit_mult_begin(Mult* node){  q.push_back("<times/>"); } 
+virtual void visit_mult_middle(Mult* node){ q.push_back(" "); }  
+virtual void visit_mult_end(Mult* node){  q.push_back(" "); }     
 
-virtual void visit_div_begin(Div* node){  sign.push_back("<divide/>");
-  space++;
-  signSpace++;
- } 
-virtual void visit_div_middle(Div* node){ 
-  //sign.push_back(" ");
-  space++;
-  
- }      
-virtual void visit_div_end(Div* node){ 
-  //sign.push_back(" ");
-  space++;
-  
- }     
+virtual void visit_div_begin(Div* node){  q.push_back("<divide/>"); }  
+virtual void visit_div_middle(Div* node){ q.push_back(" "); }      
+virtual void visit_div_end(Div* node){ q.push_back(" "); }     
 
-virtual void visit_pow_begin(Pow* node){  sign.push_back("<power/>");
-  space++;
-  signSpace++;
- }  
-virtual void visit_pow_middle(Pow* node){ 
-  //sign.push_back(" ");
-  space++;
-  
- }       
-virtual void visit_pow_end(Pow* node){ 
-  //sign.push_back(" ");
-  space++;
-  
- } 
+virtual void visit_pow_begin(Pow* node){  q.push_back("<power/>"); }   
+virtual void visit_pow_middle(Pow* node){ q.push_back(" "); }       
+virtual void visit_pow_end(Pow* node){ q.push_back(" "); } 
 
 std::string PrintFunction(Base* ptr){ 		
   auto * itr = new Iterator(ptr); 
@@ -137,23 +76,12 @@ std::string PrintFunction(Base* ptr){
     itr->next();         
   }         
 
-   for(int i= sign.size()-1; i>=0 ; i-- ){
-    sign2.push_back(sign[i]); 
-  }
- 
   cout<<"    <math>"<<endl;
   cout<<"      <apply>"<<endl;
-  cout<<"        "<<sign2[0]<<endl;
-  cout<<"        "<<num[0]<<endl;
-  cout<<"        "<<num[1]<<endl;
-
-  for(int i= 1; i<sign2.size() ; i++ ){
-    cout<<"        "<<sign2[i]<<endl;
-    if( (i+1) < num.size()){
-      cout<<"        "<<num[i+1]<<endl;
-    }
+  for(string s : q){
+    if(s != " ")
+      cout<<"       "<<s<<endl;
   }
-  
   cout<<"      </apply>"<<endl;
   cout<<"    </math>"<<endl;
 
@@ -162,5 +90,5 @@ std::string PrintFunction(Base* ptr){
 
 
 VisitMathML(){} 	
-~VisitMathML(){} 
+isitMathML(){} 
 };
